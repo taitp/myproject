@@ -1,36 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-  <style>
-    .header {
-      padding: 30px;
-      background-color: #CCC;
-      color: #FFF;
-    }
-    .menu {
-      background-color: #234;
-      color: #FFF;
-    }
-    .menu ul li {
-      float: left;
-      padding: 6px 7px;
-    }
-    .menu ul li {
-      list-style-type: none;
-    }
-    .menu ul li:hover {
-      background-color: #CCC;
-      color: #000;
-    }
-    .menu:after {
-      clear: both;
-      display: table;
-      content: "";
-    }
-  </style>
-</head>
+    <link rel="stylesheet" href="{% static 'polls/style.css' %}">
+ </head>
 <body>
   <div class="header">
     <h1>My website</h1>
