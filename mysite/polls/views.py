@@ -14,3 +14,7 @@ def viewList(request):
     list_question = Question.objects.all()
     context = {"dsquest": list_question}
     return render(request,"polls/question_list.html", context)
+
+def detailView(request,question_id):
+    q = Question.objects.get(pk=question_id)
+    return render(request,"polls/detail_question.html", { "qs": q})
