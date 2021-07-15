@@ -9,6 +9,26 @@
       background-color: #CCC;
       color: #FFF;
     }
+    .menu {
+      background-color: #234;
+      color: #FFF;
+    }
+    .menu ul li {
+      float: left;
+      padding: 6px 7px;
+    }
+    .menu ul li {
+      list-style-type: none;
+    }
+    .menu ul li:hover {
+      background-color: #CCC;
+      color: #000;
+    }
+    .menu:after {
+      clear: both;
+      display: table;
+      content: "";
+    }
   </style>
 </head>
 <body>
@@ -16,10 +36,12 @@
     <h1>My website</h1>
   </div>
   <div class="menu">
-    <li>Link 1</li>
-    <li>Link 2</li>
-    <li>Link 3</li>
-    <li>Link 4</li>
+    <ul>
+      <li>Link 1</li>
+      <li>Link 2</li>
+      <li>Link 3</li>
+      <li>Link 4</li>
+    </ul>
   </div>
   <div class="noidung">
     {% block content %}
