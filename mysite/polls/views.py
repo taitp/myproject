@@ -18,3 +18,15 @@ def viewList(request):
 def detailView(request,question_id):
     q = Question.objects.get(pk=question_id)
     return render(request,"polls/detail_question.html", { "qs": q})
+
+def vote(request,question_id):
+    q = Question.objects.get(pk=question_id)
+    try:
+        dulieu = request.POST["choice"]
+        c = q.choice_set.get(pk=dulieu)
+    except:
+        HttpResponse("Lỗi không có choice")
+    c.vote = c.vote + 1 # Lỗi khi có nhiều người vote cùng lúc
+    c.save()
+    return render(request,"polls/result.html", {"q":q})
+
